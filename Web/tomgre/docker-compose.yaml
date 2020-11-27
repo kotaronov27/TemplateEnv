@@ -1,0 +1,34 @@
+version: '3'
+services:
+  xxxxdb:
+    image: postgres:11-alpine
+    container_name: xxxxdb1 #コンテナ間通信はコンテナ名を指定、ポートはコンテナ側
+    build: ./db
+    ports:
+      - 15432:5432 #ホスト：コンテナ
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: yyyy
+    volumes:
+#      - db_data:/var/lib/postgresql/data # 永続化
+      - ./db/initdb:/docker-entrypoint-initdb.d
+    networks:
+      - xxxxnetwork
+  xxxxtomcat:
+    build: ./tomcat
+    image: tomcat-image
+    container_name: xxxxtomcat1
+    ports:
+      - 18080:8080 #ホスト：コンテナ
+    volumes:
+      - ./tomcat/share/logs:/share/logs
+#      - ./tomcat/src/conf:/opt/apache-tomcat-9.0.39/conf
+      - ./tomcat/src/webapps:/opt/apache-tomcat-9.0.39/webapps
+    networks:
+      - xxxxnetwork
+#volumes: # 永続化
+#  db_data: {} # 永続化
+networks:
+  xxxxnetwork:
+    external: true
