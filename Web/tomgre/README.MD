@@ -1,9 +1,14 @@
 # 手順
 > cd docker-compose.xmlがあるディレクトリ
+
 > docker-compose build
+
 > docker network create xxxxnetwork
+
 > docker-compose up -d
+
 http://localhost:18080/WEBAPPNAME
+
 
 # docker-compose.yaml について
 ```
