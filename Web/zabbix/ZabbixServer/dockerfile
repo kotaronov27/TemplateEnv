@@ -1,0 +1,4 @@
+FROM zabbix/zabbix-server-mysql:alpine-3.4-latest
+
+LAVEL version "1.0"
+LAVEL discription "Zabbix Server"

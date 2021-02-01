@@ -1,0 +1,7 @@
+FROM mysql:5.7
+
+LAVEL version "1.0"
+LAVEL discription "Zabbix MySQL"
+
+# docker-compose などで文字コードを変更しましょう。
+# command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci

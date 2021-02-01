@@ -1,0 +1,6 @@
+FROM zabbix/zabbix-java-gateway:alpine-3.4-latest
+
+LAVEL version "1.0"
+LAVEL discription "Zabbix GateWay"
+
+# ENV LANG ja_JP.utf8

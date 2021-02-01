@@ -1,0 +1,10 @@
+FROM zabbix/zabbix-web-nginx-mysql:alpine-3.4-latest
+
+LAVEL version "1.0"
+LAVEL discription "Zabbix Nginx"
+
+ENV DB_SERVER_HOST "mysql-server" `
+ENV MYSQL_DATABASE "zabbix" `
+ENV MYSQL_USER "zabbix" `
+ENV MYSQL_PASSWORD "zabbix_pwd" `
+ENV MYSQL_ROOT_PASSWORD "root_pwd" `
