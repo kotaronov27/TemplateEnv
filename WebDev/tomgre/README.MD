@@ -1,4 +1,6 @@
 # 手順
+
+``` shell:
 \> cd docker-compose.xmlがあるディレクトリ
 
 \> docker-compose build
@@ -6,12 +8,13 @@
 \> docker network create xxxxnetwork
 
 \> docker-compose up -d
+```
 
 http://localhost:18080/WEBAPPNAME
 
+## docker-compose.yaml について
 
-# docker-compose.yaml について
-```
+``` shell:
 version: '3'
 services:
   db1:
@@ -41,47 +44,65 @@ services:
 
 ```
 
-# docker の操作について
-## 起動
-```
+## docker の操作について
+
+### 起動
+
+``` shell:
 docker-compose up -d
 ```
 
-## 終了
-```
+### 終了
+
+``` shell:
 docker-compose down
 ```
 
-## ボリューム削除して終了
-```
+### ボリューム削除して終了
+
+``` shell:
 docker-compose down -v
 ```
 
-## 接続
-```
+### 接続
+
+``` shell:
 docker-compose exec db1 bash
 ```
+
 ## バックアップ例
+
 ### 構造ごと
+
+``` shell:
 pg_dump -d xxxx -U admin -Ft > /docker-entrypoint-initdb.d/xxxx.tar
+```
+
 ### データのみ
+
+``` shell:
 pg_dump -a -d xxxx -U admin -Ft > /docker-entrypoint-initdb.d/xxxx.tar
+```
 
 #### host　→ コンテナ
+
 ```text:db
 ドメイン：localhost
 ポート：15432
 ```
+
 ```text:tomcat
 ドメイン：localhost
 ポート：18080
 ```
 
 #### コンテナ　→ コンテナ
+
 ```text:db
 ドメイン：xxxxdb1
 ポート：5432
 ```
+
 ```text:tomcat
 ドメイン：xxxxtomcat
 ポート：8080

@@ -1,0 +1,19 @@
+version: '3'
+services:
+  maindev:
+    image: golang:stretch
+    container_name: godevmain 
+    build: 
+      context: ./godoc
+      dockerfile: dockerfile
+    volumes:
+      - ./src:/user/src
+    privileged: true
+    tty: true
+    # ports:
+    #  - "10080:80"
+    networks:
+      - gogogood
+networks:
+    gogogood:
+      external: true

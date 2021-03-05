@@ -1,0 +1,7 @@
+FROM golang:stretch
+LABEL maintainer="goenv"
+
+RUN cd /usr/src/mod
+RUN go mod init github.com/kotaronov27/TemplateEnv
+
+RUN go get -u github.com/derekparker/delve/cmd/dlv
