@@ -1,5 +1,11 @@
-# WEBの自動生成ファイル
+## WEBの自動生成ファイル
 Web/tomgre/tomcat/src/webapps/SPRM_WEB/
 
-# 必要な設定
+## 必要な設定
 !Web/tomgre/tomcat/src/webapps/WEBAPPNAME/WEBAPPNAME/WEB-INF/classes/application.yml
+
+## 
+WebApp/Jenkins/home/*
+!WebApp/Jenkins/home/.gitkeep
+WebApp/Jenkins/secrets/*
+!WebApp/Jenkins/secrets/.gitkeep

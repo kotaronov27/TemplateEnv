@@ -1,0 +1,9 @@
+javadoc 1.6
+dashboard-view 2.14
+analysis-model-api 9.8.1
+matrix-project 1.18
+token-macro 2.15
+maven-plugin 3.10
+warnings-ng 8.10.0
+git 4.6.0
+git-client 3.6.0
